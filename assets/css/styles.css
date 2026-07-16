@@ -1,0 +1,68 @@
+/* Custom styles for DJ Smokin Joe (used alongside Tailwind CDN)
+   - Neon glows, laser layer, equalizer animations, basic responsive tweaks
+*/
+
+.neon-text {
+  text-shadow: 0 0 8px rgba(0,198,255,0.6), 0 0 18px rgba(139,92,246,0.35);
+  color: white;
+}
+
+.neon-logo {
+  color: white;
+  text-shadow: 0 0 6px rgba(0,198,255,0.6), 0 0 12px rgba(139,92,246,0.35);
+}
+
+#particles-js {
+  background: radial-gradient(ellipse at center, rgba(139,92,246,0.06), transparent 40%), radial-gradient(ellipse at center, rgba(0,198,255,0.04), transparent 60%);
+}
+
+.laser-layer::before,
+.laser-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+}
+
+.laser-layer::before {
+  background-image: linear-gradient(90deg, rgba(0,198,255,0.1) 0%, rgba(139,92,246,0.08) 50%, rgba(0,198,255,0.1) 100%);
+  transform: skewY(-6deg) translateY(-10%);
+  filter: blur(12px);
+}
+
+.laser-layer::after {
+  background-image: linear-gradient(120deg, rgba(139,92,246,0.08), rgba(0,198,255,0.06));
+  transform: skewY(6deg) translateY(10%);
+  filter: blur(22px);
+}
+
+/* Equalizer bar animation will be driven by JS (GSAP) but add base styles */
+#equalizer .eq {
+  width: 8px;
+  max-height: 140px;
+  transition: height 0.2s linear;
+}
+
+/* Swiper slide baseline */
+.swiper-slide { min-height: 80px; }
+
+/* Lightbox thumbnails */
+.gallery-grid img { transition: transform .25s ease, filter .25s ease; }
+.gallery-grid img:hover { transform: scale(1.03); filter: brightness(1.1); }
+
+/* Contact form tweaks */
+.form-input, .form-textarea {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: .65rem .75rem;
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* Mobile menu fallback */
+@media (max-width: 768px) {
+  nav ul { display: none; }
+}
