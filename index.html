@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DJ Smokin Joe — Official</title>
+  <meta name="description" content="DJ Smokin Joe — Neon festival-style EDM DJ. Booking, music, gallery, and EPK." />
+  <meta property="og:title" content="DJ Smokin Joe — Official" />
+  <meta property="og:description" content="Neon blue & purple festival visuals, music and booking." />
+  <meta property="og:image" content="https://placehold.co/1200x630/1b1b1b/7c3aed.png&text=DJ+Smokin+Joe" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Tailwind via CDN for quick scaffold -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neonblue: '#00c6ff',
+            neonpurple: '#8b5cf6'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GLightbox (gallery) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <!-- Swiper (carousel) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-[#07070b] text-white antialiased">
+  <header class="fixed w-full z-50">
+    <nav class="backdrop-blur bg-black/30">
+      <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <a href="/" class="font-bold text-2xl neon-logo">DJ Smokin Joe</a>
+        <ul class="hidden md:flex gap-6 items-center">
+          <li><a href="/music.html" class="hover:underline">Music</a></li>
+          <li><a href="/gallery.html" class="hover:underline">Gallery</a></li>
+          <li><a href="/epk.html" class="hover:underline">EPK</a></li>
+          <li><a href="/contact.html" class="hover:underline">Booking</a></li>
+          <li><a href="https://instagram.com/dj_smokinjoe25" target="_blank" rel="noopener" class="px-3 py-1 border rounded border-white/20">Instagram</a></li>
+        </ul>
+        <button id="menuBtn" class="md:hidden">Menu</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-20">
+    <!-- Hero -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Particle canvas placeholder (particles.js will hook into this) -->
+      <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+      <!-- Laser beams (animated via CSS/GSAP) -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="w-full h-full">
+          <div class="laser-layer absolute inset-0" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight neon-text leading-tight">DJ Smokin Joe</h1>
+        <p class="mt-4 text-lg md:text-2xl text-white/80">Neon festival beats • Live DJ sets • Booking available</p>
+
+        <div class="mt-8 flex items-center justify-center gap-4">
+          <a href="/music.html" class="px-6 py-3 rounded-md bg-gradient-to-r from-neonblue to-neonpurple font-semibold">Listen</a>
+          <a href="/contact.html" class="px-6 py-3 rounded-md border border-white/20">Book Now</a>
+        </div>
+
+        <!-- Equalizer bars -->
+        <div id="equalizer" class="mt-12 flex items-end gap-2 justify-center">
+          <div class="eq w-2 bg-neonblue rounded h-12"></div>
+          <div class="eq w-2 bg-neonpurple rounded h-20"></div>
+          <div class="eq w-2 bg-neonblue rounded h-16"></div>
+          <div class="eq w-2 bg-neonpurple rounded h-24"></div>
+          <div class="eq w-2 bg-neonblue rounded h-10"></div>
+          <div class="eq w-2 bg-neonpurple rounded h-18"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder sections: About, Reviews -->
+    <section class="py-20">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold neon-text">About</h2>
+        <p class="mt-4 text-white/80">Festival-ready DJ with high-energy sets and a neon-aesthetic performance experience. Placeholder bio — replace with your copy.</p>
+      </div>
+    </section>
+
+    <section class="py-12 bg-gradient-to-b from-[#071022]/40 to-transparent">
+      <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-2xl font-semibold mb-6 neon-text text-center">Reviews</h3>
+        <!-- Swiper carousel -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide bg-[#0b0b12] p-6 rounded">"Amazing set!" — Placeholder</div>
+            <div class="swiper-slide bg-[#0b0b12] p-6 rounded">"High energy and vibes." — Placeholder</div>
+            <div class="swiper-slide bg-[#0b0b12] p-6 rounded">"Would book again." — Placeholder</div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-8 text-center text-sm text-white/60">
+    <div class="max-w-6xl mx-auto px-6">© DJ Smokin Joe — Placeholder site. Contact: jrparanormal25@gmail.com</div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
